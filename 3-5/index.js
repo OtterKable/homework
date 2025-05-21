@@ -31,6 +31,10 @@ function divide(x, y) {
 divide2 = (x,y) => x/y;
 
 
-
-
-
+var littleCar2 = {
+    maxSpeed: 70,
+    driver: 'Wario',
+    drive: function(speed,time){
+        console.log('distance is ' + speed * time + ' miles')
+    }
+}
