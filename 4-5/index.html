@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React World!</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+            state = {
+                name: 'Jeff',
+                age: 50
+            }
+
+            handleClick = (e) => {
+                // console.log(e.target);
+                this.setState({
+                    name: 'Kristi'
+                })
+                console.log(this.state.name);
+            }
+
+            handleMouseOver(e) {
+                console.log(e.target, e.pageX);
+            }
+
+            handleCopy(e) {
+                e.preventDefault();
+                return false;
+            }
+
+            render() {
+                return (
+                    <div className="app-content">
+                        <h1>Hey, ninjas!</h1>
+                        <p>My name is {this.state.name} and I’m {this.state.age} years old.</p>
+                        <button onClick={this.handleClick}>Change Me!</button><br />
+                        <button onMouseOver={this.handleMouseOver}>Hover Me!</button>
+                        <p onCopy={this.handleCopy}>Can’t copy this.</p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
+        //Shopping Cart
+
+    </script>
+</body>
+
+</html>
